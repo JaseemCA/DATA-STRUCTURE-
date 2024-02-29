@@ -18,6 +18,7 @@ class Slinkedlist {
       head = newnode;
     } else {
       tail?.next = newnode;
+      // print("values are");
     }
     tail = newnode;
   }
@@ -35,6 +36,33 @@ class Slinkedlist {
       temp = temp.next;
     }
   }
+
+  deletenode(int data) {
+    node? temp = head;
+    node? prev;
+
+    if (temp != null && temp.data == data) {
+      head = temp.next;
+      return;
+    }
+    while (temp != null && temp.data != data) {
+      prev = temp;
+      temp = temp.next;
+    }
+
+    if (temp == null) {
+      print("value is empty");
+      return;
+    }
+
+    if (temp == tail) {
+      tail = prev;
+      tail?.next = null;
+      return;
+    }
+
+    prev?.next = temp.next;
+  }
 }
 
 void main() {
@@ -44,8 +72,9 @@ void main() {
   list.addnode(230);
   list.addnode(30);
   list.addnode(22);
+  
+
+  list.deletenode(22);
+
   list.displaylist();
-
-
-
 }
