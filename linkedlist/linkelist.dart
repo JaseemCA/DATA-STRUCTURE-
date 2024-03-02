@@ -63,18 +63,38 @@ class Slinkedlist {
 
     prev?.next = temp.next;
   }
+
+  insertAfter(int nextto, int data) {
+    node newnode = node(data);
+    node? temp = head;
+
+    while (temp != null && temp.data != nextto) {
+      temp = temp.next;
+    }
+    if (temp == null) {
+      print('data is not available');
+      return;
+    }
+
+    if (temp == tail) {
+      tail?.next = newnode;
+      tail = newnode;
+      return;
+    }
+    newnode.next = temp.next;
+    temp.next = newnode;
+  }
 }
 
 void main() {
   Slinkedlist list = Slinkedlist();
   // list.displaylist();
   list.addnode(20);
-  list.addnode(230);
+  // list.addnode(230);
   list.addnode(30);
   list.addnode(22);
-  
 
-  list.deletenode(22);
+  list.insertAfter(20, 500);
 
   list.displaylist();
 }
