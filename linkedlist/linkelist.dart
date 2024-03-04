@@ -84,6 +84,57 @@ class Slinkedlist {
     newnode.next = temp.next;
     temp.next = newnode;
   }
+insertBefore(int before, int data) {
+    node newnode = node(data);
+    node? temp = head;
+    node? prev;
+
+    if (head == null) {
+      print("empty");
+      return;
+    }
+
+    if (head?.data == before) {
+      newnode.next = head;
+      head = newnode;
+      return;
+    }
+
+    while (temp != null && temp.data != before) {
+      prev = temp;
+      temp = temp.next;
+    }
+
+    if (temp == null) {
+      print('data is not available');
+      return;
+    }
+
+    prev!.next = newnode;
+    newnode.next = temp;
+  }
+  // insertbefore(int before, int data) { 
+  //   node? newnode = node(data);
+  //   node? current = head;
+
+  //   if (current == null) {
+  //     print("empty");
+  //     return;
+  //   }
+  //   if (current.data == before) {
+      
+  //     newnode.next = current;
+
+  //     return;
+  //   }
+
+  //   while (current?.next != null && current?.next?.data != before) {
+  //     current = current?.next;
+  //   }
+  //   newnode.next = current?.next;
+  //   current?.next = newnode;
+  // }
+
 }
 
 void main() {
@@ -93,8 +144,10 @@ void main() {
   // list.addnode(230);
   list.addnode(30);
   list.addnode(22);
-
-  list.insertAfter(20, 500);
-
+  // list.deletenode(10);
+  // list.insertAfter(20, 500);
+  list.insertBefore(22, 300);
   list.displaylist();
+
+
 }
