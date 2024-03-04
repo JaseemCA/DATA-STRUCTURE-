@@ -84,7 +84,8 @@ class Slinkedlist {
     newnode.next = temp.next;
     temp.next = newnode;
   }
-insertBefore(int before, int data) {
+
+  insertBefore(int before, int data) {
     node newnode = node(data);
     node? temp = head;
     node? prev;
@@ -96,7 +97,7 @@ insertBefore(int before, int data) {
 
     if (head?.data == before) {
       newnode.next = head;
-      head = newnode;
+      newnode = head!;
       return;
     }
 
@@ -113,28 +114,33 @@ insertBefore(int before, int data) {
     prev!.next = newnode;
     newnode.next = temp;
   }
-  // insertbefore(int before, int data) { 
-  //   node? newnode = node(data);
-  //   node? current = head;
 
-  //   if (current == null) {
-  //     print("empty");
-  //     return;
-  //   }
-  //   if (current.data == before) {
-      
-  //     newnode.next = current;
+  insertbefore(int before, int data) {
+    node? newnode = node(data);
+    node? current = head;
 
-  //     return;
-  //   }
+    if (current == null) {
+      print("empty");
+      return;
+    }
 
-  //   while (current?.next != null && current?.next?.data != before) {
-  //     current = current?.next;
-  //   }
-  //   newnode.next = current?.next;
-  //   current?.next = newnode;
-  // }
+    if (head?.data == before) {
+      newnode.next = head;
+      head = newnode;
+    }
 
+    if (current.data == before) {
+      newnode.next = current;
+
+      return;
+    }
+
+    while (current?.next != null && current?.next?.data != before) {
+      current = current?.next;
+    }
+    newnode.next = current?.next;
+    current?.next = newnode;
+  }
 }
 
 void main() {
@@ -146,8 +152,7 @@ void main() {
   list.addnode(22);
   // list.deletenode(10);
   // list.insertAfter(20, 500);
-  list.insertBefore(22, 300);
+  list.insertbefore(20, 300);
+  // list.insertBefore(22, 300);
   list.displaylist();
-
-
 }
