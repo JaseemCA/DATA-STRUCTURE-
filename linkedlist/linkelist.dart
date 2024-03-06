@@ -1,5 +1,7 @@
 // import 'dart:js_util';
 
+import 'dart:collection';
+
 class node {
   int? data;
   node? next;
@@ -85,6 +87,18 @@ class Slinkedlist {
     temp.next = newnode;
   }
 
+  middlevalue() {
+    node? temp1 = head;
+    node? temp2 = head;
+    while (temp1 != null && temp2?.next != null) {
+      temp1 = temp1.next;
+      temp2 = temp2?.next?.next;
+    }
+
+    print("middle value is ");
+    print(temp1?.data);
+  }
+
   insertBefore(int before, int data) {
     node newnode = node(data);
     node? temp = head;
@@ -141,18 +155,77 @@ class Slinkedlist {
     newnode.next = current?.next;
     current?.next = newnode;
   }
+
+
+removeDuplicate() {
+  if (head == null) {
+    return;
+  }
+  node? current = head;
+  HashSet<int> seenValues = HashSet();
+
+ seenValues.add(current!.data!);
+
+  while (current?.next != null) {
+    if (seenValues.contains(current?.next!.data)) {
+         current?.next = current.next!.next;
+    } else {
+       seenValues.add(current!.next!.data!);
+      current = current.next;
+    }
+  }
+
+  
+  tail = current;
+}
+
+
+
+  removeduplicate() {
+    node? temp = head;
+    node? next;
+   while (temp != null) {
+      next = temp.next;
+      while (next != null && next.data == temp.data) {
+        next = next.next;
+      }
+      temp.next = next;
+     
+      if (next == tail)
+      {
+        tail = temp;
+      } 
+      temp = next;
+    }
+  }
+
 }
 
 void main() {
   Slinkedlist list = Slinkedlist();
+
   // list.displaylist();
   list.addnode(20);
   // list.addnode(230);
   list.addnode(30);
+  list.addnode(30);
+  list.addnode(30);
+  list.addnode(30);
   list.addnode(22);
-  // list.deletenode(10);
+  list.addnode(52);
+  list.addnode(52);
+  list.addnode(52);
+  list.addnode(52);
+  list.addnode(42);
+  list.addnode(70);
+  list.addnode(52);
+  list.addnode(70);
+
   // list.insertAfter(20, 500);
-  list.insertbefore(20, 300);
+  // list.insertbefore(20, 300);
   // list.insertBefore(22, 300);
+  // list.deletenode(20);
+  // list.middlevalue();
+  list.removeDuplicate();
   list.displaylist();
 }
