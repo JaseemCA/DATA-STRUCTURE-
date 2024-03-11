@@ -3,7 +3,8 @@
 import 'dart:collection';
 
 class node {
-  int? data;
+  dynamic data;
+  // String? name;
   node? next;
 
   node(this.data);
@@ -13,7 +14,7 @@ class Slinkedlist {
   node? head;
   node? tail;
 
-  addnode(int data) {
+  addnode(dynamic data) {
     node newnode = node(data);
 
     if (head == null) {
@@ -156,76 +157,84 @@ class Slinkedlist {
     current?.next = newnode;
   }
 
-
-removeDuplicate() {
-  if (head == null) {
-    return;
-  }
-  node? current = head;
-  HashSet<int> seenValues = HashSet();
-
- seenValues.add(current!.data!);
-
-  while (current?.next != null) {
-    if (seenValues.contains(current?.next!.data)) {
-         current?.next = current.next!.next;
-    } else {
-       seenValues.add(current!.next!.data!);
-      current = current.next;
+  removeDuplicate() {
+    if (head == null) {
+      return;
     }
+    node? current = head;
+    HashSet<int> seenValues = HashSet();
+
+    seenValues.add(current!.data!);
+
+    while (current?.next != null) {
+      if (seenValues.contains(current?.next!.data)) {
+        current?.next = current.next!.next;
+      } else {
+        seenValues.add(current!.next!.data!);
+        current = current.next;
+      }
+    }
+
+    tail = current;
   }
-
-  
-  tail = current;
-}
-
-
 
   removeduplicate() {
     node? temp = head;
     node? next;
-   while (temp != null) {
+    while (temp != null) {
       next = temp.next;
       while (next != null && next.data == temp.data) {
         next = next.next;
       }
       temp.next = next;
-     
-      if (next == tail)
-      {
+
+      if (next == tail && temp.data == next?.data) {
         tail = temp;
-      } 
+        tail?.next = null;
+      }
       temp = next;
     }
   }
 
+  reverselinked() {
+    node? prev = null;
+    node? temp = head;
+    node? next;
+
+    while (temp != null) {
+      next = temp.next;
+      temp.next = prev;
+      prev = temp;
+      temp = next;
+    }
+    head = prev;
+  }
 }
 
 void main() {
   Slinkedlist list = Slinkedlist();
 
   // list.displaylist();
-  list.addnode(20);
-  // list.addnode(230);
-  list.addnode(30);
-  list.addnode(30);
-  list.addnode(30);
-  list.addnode(30);
-  list.addnode(22);
-  list.addnode(52);
-  list.addnode(52);
-  list.addnode(52);
-  list.addnode(52);
-  list.addnode(42);
-  list.addnode(70);
-  list.addnode(52);
-  list.addnode(70);
+
+  list.addnode("P");
+  list.addnode("E");
+  list.addnode("T");
+  list.addnode("E");
+  list.addnode("R");
+  // list.addnode(6);
+  // list.addnode(7);
+  // list.addnode(8);
+  // list.addnode(9);
+  //  list.addnode(10);
+
+  // list.addnode(52);
 
   // list.insertAfter(20, 500);
   // list.insertbefore(20, 300);
   // list.insertBefore(22, 300);
   // list.deletenode(20);
   // list.middlevalue();
-  list.removeDuplicate();
+  // list.removeduplicate();
+  list.reverselinked();
   list.displaylist();
 }
