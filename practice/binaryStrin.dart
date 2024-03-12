@@ -22,6 +22,6 @@ class Sample {
 void main() {
   Sample sample = Sample();
   List<String> arr = ['p', 'r', 'y', 't'];
-  var result = sample.binaryString(arr, 'y');
+  var result = sample.binaryString(arr, 'p');
   print(result);
 }
