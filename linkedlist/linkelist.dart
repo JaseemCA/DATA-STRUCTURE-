@@ -1,5 +1,6 @@
 // import 'dart:js_util';
 
+
 import 'dart:collection';
 
 class node {
@@ -216,25 +217,25 @@ void main() {
 
   // list.displaylist();
 
-  list.addnode("P");
-  list.addnode("E");
-  list.addnode("T");
-  list.addnode("E");
-  list.addnode("R");
-  // list.addnode(6);
-  // list.addnode(7);
-  // list.addnode(8);
-  // list.addnode(9);
-  //  list.addnode(10);
+  // list.addnode("P");
+  // list.addnode("E");
+  // list.addnode("T");
+  // list.addnode("E");
+  // list.addnode("R");
+  list.addnode(6);
+  list.addnode(7);
+  list.addnode(8);
+  list.addnode(9);
+   list.addnode(10);
 
-  // list.addnode(52);
+  list.addnode(52);
 
-  // list.insertAfter(20, 500);
-  // list.insertbefore(20, 300);
-  // list.insertBefore(22, 300);
-  // list.deletenode(20);
-  // list.middlevalue();
-  // list.removeduplicate();
+  list.insertAfter(20, 500);
+  list.insertbefore(20, 300);
+  list.insertBefore(22, 300);
+  list.deletenode(20);
+  list.middlevalue();
+  list.removeduplicate();
   list.reverselinked();
   list.displaylist();
 }
