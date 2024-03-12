@@ -25,3 +25,5 @@ void main() {
   var res = sample.binerySearch(array, 2);
   print(res);
 }
+
+
