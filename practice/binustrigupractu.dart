@@ -19,8 +19,7 @@ class Sample {
 
     return -1;
   }
-}
-
+} 
 void main() {
   Sample values = Sample();
   List<String> arr = ['apple', 'orange', 'banaana', 'grapes', 'pineapple'];

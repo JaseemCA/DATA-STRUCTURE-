@@ -15,16 +15,8 @@ class Sample {
 }
 
 void main() {
-  List<int> store = [
-    9,
-    5,
-    7,
-    9,
-    4,
-    0,
-    2,
-  ];
-  int target =18;
+  List<int> store = [9, 5, 7, 9, 4, 0, 2];
+  int target = 18;
   Sample sample = Sample();
   List<int> result = sample.twonumbers(store, target);
   print(result);

@@ -1,11 +1,9 @@
 // import 'dart:js_util';
 
-
 import 'dart:collection';
 
 class node {
   dynamic data;
-  // String? name;
   node? next;
 
   node(this.data);
@@ -22,7 +20,6 @@ class Slinkedlist {
       head = newnode;
     } else {
       tail?.next = newnode;
-      // print("values are");
     }
     tail = newnode;
   }
@@ -101,61 +98,34 @@ class Slinkedlist {
     print(temp1?.data);
   }
 
-  insertBefore(int before, int data) {
-    node newnode = node(data);
-    node? temp = head;
-    node? prev;
-
-    if (head == null) {
-      print("empty");
-      return;
-    }
-
-    if (head?.data == before) {
-      newnode.next = head;
-      newnode = head!;
-      return;
-    }
-
-    while (temp != null && temp.data != before) {
-      prev = temp;
-      temp = temp.next;
-    }
-
-    if (temp == null) {
-      print('data is not available');
-      return;
-    }
-
-    prev!.next = newnode;
-    newnode.next = temp;
-  }
-
   insertbefore(int before, int data) {
     node? newnode = node(data);
     node? current = head;
+    node? prev = null;
 
     if (current == null) {
-      print("empty");
+      print("List is empty");
       return;
-    }
-
-    if (head?.data == before) {
-      newnode.next = head;
-      head = newnode;
     }
 
     if (current.data == before) {
       newnode.next = current;
-
+      head = newnode;
       return;
     }
 
-    while (current?.next != null && current?.next?.data != before) {
-      current = current?.next;
+    while (current != null && current.data != before) {
+      prev = current;
+      current = current.next;
     }
-    newnode.next = current?.next;
-    current?.next = newnode;
+
+    if (current == null) {
+      print("Node with value $before not found in the list");
+      return;
+    }
+
+    prev!.next = newnode;
+    newnode.next = current;
   }
 
   removeDuplicate() {
@@ -200,7 +170,7 @@ class Slinkedlist {
   reverselinked() {
     node? prev = null;
     node? temp = head;
-    node? next;
+    node? next = null;
 
     while (temp != null) {
       next = temp.next;
@@ -210,10 +180,56 @@ class Slinkedlist {
     }
     head = prev;
   }
+
+  middleValueDelete() {
+    node? temp = head;
+    node? slow = temp;
+    node? fast = temp;
+    node? prev;
+
+    while (slow?.next != null && fast?.next != null) {
+      slow = slow?.next;
+      fast = fast?.next?.next;
+    }
+    if (temp != null && temp.data == slow?.data) {
+      head = temp.next;
+    }
+    while (temp != null && temp.data != slow?.data) {
+      prev = temp;
+      temp = temp.next;
+    }
+    if (temp == tail) {
+      prev = tail;
+      tail?.next = null;
+    }
+    prev?.next = temp?.next;
+  }
+
+  List<int> toarray() {
+    List<int> arr = [];
+    node? temp = head;
+    while (temp != null) {
+      arr.add(temp.data);
+      temp = temp.next;
+    }
+    return arr;
+  }
+
+  arraytolist(List<int> arr) {
+   
+    for (int i = 0; i < arr.length; i++) {
+      addnode(arr[i]);
+    }
+  }
 }
 
 void main() {
   Slinkedlist list = Slinkedlist();
+
+  List<int> arr = [2, 3, 4, 6, 7];
+
+  list.arraytolist(arr);
+  
 
   // list.displaylist();
 
@@ -226,16 +242,18 @@ void main() {
   list.addnode(7);
   list.addnode(8);
   list.addnode(9);
-   list.addnode(10);
+  list.addnode(10);
 
-  list.addnode(52);
-
-  list.insertAfter(20, 500);
-  list.insertbefore(20, 300);
-  list.insertBefore(22, 300);
-  list.deletenode(20);
-  list.middlevalue();
-  list.removeduplicate();
-  list.reverselinked();
+  // list.insertbefore(6, 5);
+  // List<int> resu = list.toarray();
+  // print(resu);
+  // list.insertAfter(20, 500);
+  // list.insertbefore(20, 300);
+  // list.insertBefore(22, 300);
+  // list.deletenode(20);
+  // list.middlevalue();
+  // list.removeduplicate();
+  // list.reverselinked();
+  // list.middleValueDelete();
   list.displaylist();
 }

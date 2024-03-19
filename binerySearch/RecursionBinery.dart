@@ -1,4 +1,4 @@
-import 'dart:convert';
+// import 'dart:convert';
 
 class sapmle {
   int bineryrecursion(List<int> arr, int target, int start, int end) {
@@ -17,8 +17,9 @@ class sapmle {
       return bineryrecursion(arr, target, mid + 1, end);
     }
   }
-}
 
+  void binery(List<int> arr, int i) {}
+}
 void main() {
   sapmle values = sapmle();
 
