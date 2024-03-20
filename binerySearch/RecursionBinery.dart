@@ -18,7 +18,6 @@ class sapmle {
     }
   }
 
-  void binery(List<int> arr, int i) {}
 }
 void main() {
   sapmle values = sapmle();

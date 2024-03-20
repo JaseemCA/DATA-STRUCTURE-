@@ -18,13 +18,11 @@ class Recursion {
     }
   }
 
-  multiple(int num) {
-    if (num == 1) {
-      return 1;
+ multiple(int num, int times) {
+    if (times == 1) {
+      return num;
     } else {
-      var resu = num * multiple(num - 1);
-      print(resu);
-      return resu;
+      return num + multiple(num, times - 1);
     }
   }
 }
@@ -32,7 +30,7 @@ class Recursion {
 void main() {
   Recursion values = Recursion();
 
-  var resu = values.factorial(0);
-  print(resu);
-  values.multiple(8);
+  // var resu = values.factorial(0);
+  // print(resu);
+  values.multiple(8,8);
 }

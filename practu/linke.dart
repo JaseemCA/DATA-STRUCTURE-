@@ -106,6 +106,16 @@ class linked {
     }
     head = prev;
   }
+
+  midvalue() {
+    node? temp1 = head;
+    node? temp2 = head;
+    while (temp1 != null && temp2?.next != null) {
+      temp1 = temp1.next;
+      temp2 = temp2?.next?.next;
+    }
+    print("middle value id ${temp1!.data}");
+  }
 }
 
 void main() {
@@ -124,9 +134,9 @@ void main() {
   // values.todarray();
   // var resu = values.todarray();
   // print(resu);
-  List<int> arr = [1, 2, 3, 4, 5, 6];
+  // List<int> arr = [1, 2, 3, 4, 5, 6];
 
-  values.arraytolist(arr);
-
+  // values.arraytolist(arr);
+  values.midvalue();
   values.display();
 }
