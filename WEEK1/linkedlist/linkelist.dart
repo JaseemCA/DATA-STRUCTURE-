@@ -216,7 +216,6 @@ class Slinkedlist {
   }
 
   arraytolist(List<int> arr) {
-   
     for (int i = 0; i < arr.length; i++) {
       addnode(arr[i]);
     }
@@ -226,13 +225,13 @@ class Slinkedlist {
 void main() {
   Slinkedlist list = Slinkedlist();
 
-  List<int> arr = [2, 3, 4, 6, 7];
+  // List<int> arr = [2, 3, 4, 6, 7];
 
-  list.arraytolist(arr);
-  
+  // list.arraytolist(arr);
 
   // list.displaylist();
-
+  List<int> arr = [2, 3, 4, 5, 6, 7];
+  list.arraytolist(arr);
   // list.addnode("P");
   // list.addnode("E");
   // list.addnode("T");
@@ -240,8 +239,10 @@ void main() {
   // list.addnode("R");
   list.addnode(6);
   list.addnode(7);
-  list.addnode(8);
+  list.addnode(7);
   list.addnode(9);
+  list.addnode(10);
+  list.addnode(8);
   list.addnode(10);
 
   // list.insertbefore(6, 5);
@@ -252,7 +253,7 @@ void main() {
   // list.insertBefore(22, 300);
   // list.deletenode(20);
   // list.middlevalue();
-  // list.removeduplicate();
+  // list.removeDuplicate();
   // list.reverselinked();
   // list.middleValueDelete();
   list.displaylist();

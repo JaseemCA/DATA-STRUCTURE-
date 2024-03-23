@@ -131,6 +131,8 @@ void main() {
   linked value = linked();
   value.addnode(80);
   value.addnode(20);
+  value.addnode(20);
+  value.addnode(20);
   value.addnode(60);
   value.addnode(30);
   value.addnode(10);
@@ -141,8 +143,8 @@ void main() {
   // value.innsertafter(70, 50);
   // value.insertbefore(20, 50);
 
-  List<int> resu = value.toarray();
-  print(resu);
+  // List<int> resu = value.toarray();
+  // print(resu);
   // value.removeduplicate();
   // value.reverse();
   value.middleValueDelete();
