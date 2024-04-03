@@ -44,7 +44,7 @@ class sorting {
 void main() {
   sorting values = sorting();
 
-  List<int> arr = [324, 56, 34, 4, 2, 46, 76, 878, 6, 554];
+  List<int> arr = [324, 56, 34, 4,1,1,1,1, 2, 46, 76, 878, 6, 554];
 
   var resu = values.quicksort(arr);
   print(resu);
