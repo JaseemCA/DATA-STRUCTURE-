@@ -32,7 +32,7 @@ RemoveDuplcate(List<int> arr) {
 
     if (value) {
       result.add(arr[i]);
-    } 
+    }
   }
 
   return result;
@@ -44,3 +44,5 @@ void main() {
   var resu = RemoveDuplcate(arr);
   print(resu);
 }
+
+

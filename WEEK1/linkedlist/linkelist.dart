@@ -1,4 +1,4 @@
-// import 'dart:js_util';
+
 
 import 'dart:collection';
 
@@ -230,8 +230,8 @@ void main() {
   // list.arraytolist(arr);
 
   // list.displaylist();
-  List<int> arr = [2, 3, 4, 5, 6, 7];
-  list.arraytolist(arr);
+  // List<int> arr = [2, 3, 4, 5, 6, 7];
+  // list.arraytolist(arr);
   // list.addnode("P");
   // list.addnode("E");
   // list.addnode("T");
@@ -251,7 +251,7 @@ void main() {
   // list.insertAfter(20, 500);
   // list.insertbefore(20, 300);
   // list.insertBefore(22, 300);
-  // list.deletenode(20);
+  list.deletenode(6);
   // list.middlevalue();
   // list.removeDuplicate();
   // list.reverselinked();

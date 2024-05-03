@@ -15,8 +15,8 @@ class Sort {
     int j = 0;
     int k = 0;
     while (i < firsthalf.length && j < lasthalf.length) {
-      // Change the comparison condition to sort in descending order
-      if (firsthalf[i] > lasthalf[j]) { // Modified condition
+      
+      if (firsthalf[i] > lasthalf[j]) { 
         valuestoring[k++] = firsthalf[i++];
       } else {
         valuestoring[k++] = lasthalf[j++];

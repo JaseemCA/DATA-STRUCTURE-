@@ -16,7 +16,7 @@ class quick {
   int right = end;
 
   while (left <= right) {
-    while (left <= right && arr[left] <= arr[pivot]) {
+    while (left <= right && arr[left] <=arr[pivot]) {
       left++;
     }
     while (left <= right && arr[right] >= arr[pivot]) {

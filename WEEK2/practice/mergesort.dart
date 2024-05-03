@@ -1,22 +1,22 @@
 class sort {
-  List<int> mergesortt(List<int> store) {
+  List<dynamic> mergesortt(List<dynamic> store) {
     if (store.length <= 1) {
       return store;
     }
     int middle = store.length ~/ 2;
-    List<int> firsthalf = store.sublist(0, middle);
-    List<int> lasthalf = store.sublist(middle);
+    List<dynamic> firsthalf = store.sublist(0, middle);
+    List<dynamic> lasthalf = store.sublist(middle);
     return joinfun(mergesortt(firsthalf), mergesortt(lasthalf));
   }
 
-  List<int> joinfun(List<int> firsthalf, List<int> lasthalf) {
-    List<int> valuestoring = List<int>.from(firsthalf + lasthalf);
+  List<dynamic> joinfun(List<dynamic> firsthalf, List<dynamic> lasthalf) {
+    List<dynamic> valuestoring = List<dynamic>.from(firsthalf + lasthalf);
     int j = 0;
     int i = 0;
     int k = 0;
 
     while (i < firsthalf.length && j < lasthalf.length) {
-      if (firsthalf[i] < lasthalf[j]) {
+      if (firsthalf[i].compareTo(lasthalf[j])>0) {
         valuestoring[k++] = firsthalf[i++];
       } else {
         valuestoring[k++] = lasthalf[j++];
@@ -28,6 +28,7 @@ class sort {
     while (j < lasthalf.length) {
       valuestoring[k++] = lasthalf[j++];
     }
+    
     return valuestoring;
   }
 }
@@ -35,7 +36,7 @@ class sort {
 void main() {
   sort values = sort();
 
-  List<int> store = [223, 434, 2344456, 47, 67, 4, 34, 3433, 22, 1, 1, 1, 3];
-  List<int> resu=values.mergesortt(store);
+  List<dynamic> store = ['jaseem','peter','adnan','jasir'];
+  List<dynamic> resu=values.mergesortt(store);
   print(resu);
 }
