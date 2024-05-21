@@ -26,7 +26,7 @@ class Quicksort {
         right--;
       }
       if (arr[right] <= arr[pivot]) {
-        left++;
+        left--;
       }
       if (arr[left] >= arr[pivot]) {
         right--;

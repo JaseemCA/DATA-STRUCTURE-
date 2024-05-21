@@ -26,7 +26,7 @@ class Hastable {
     table?[index].remove(value);
   }
 
-  void display() {
+   display() {
     for (int i = 0; i < size; i++) {
       List<dynamic> temp = table![i];
       print(temp);
@@ -35,7 +35,7 @@ class Hastable {
 }
 
 void main() {
-  Hastable value = Hastable(10);
+  Hastable value = Hastable(15);
 
   value.insert(1, "jaseem");
   value.insert(2, "peter parker");

@@ -1,24 +1,21 @@
-Duplicate(List<int> arr) {
-  var flag = 0;
-  for (int i = 0; i < arr.length; i++) {
-    if (arr[i] == arr[i + 1]) {
-      flag = 1;
+oddandeven() {
+  List<int> arr = [2, 3, 5, 1, 6, 7, 9, 5, 6, 0];
 
-      break;
+  List<int> odd = [];
+  List<int> even = [];
+
+  for (int i = 0; i < arr.length; i++) {
+    if (arr[i].isEven) {
+      even.add(arr[i]);
+    } else if(arr[i].isOdd){
+      odd.add(arr[i]);
     }
   }
-  if (flag == 1) {
-    print("repeating");
-  } else {
-    print("not");
-  }
+
+  print(even);
+  print(odd);
 }
 
-
-
-
-
 void main() {
-  List<int> arr = [1, 2, 2, 3, 3, 4, 57, 77, 77];
-  Duplicate(arr);
+  oddandeven();
 }

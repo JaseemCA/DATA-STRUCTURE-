@@ -34,10 +34,11 @@ class Strings {
 
 void main() {
   Strings values = Strings();
-  values.concatunation("peter", "parker");
-  values.replace("hello I am jaseem peter");
+  // values.concatunation("peter", "parker");
+  // values.replace("hello I am jaseem peter");
   values.substringfun("this is jaseeem ");
-  values.trimfun('adna is a good BOY       ');
-  values.upperandlower('veeran ', 'PETER');
-  values.containcheck('peter');
+  
+  // values.trimfun('adna is a good BOY       ');
+  // values.upperandlower('veeran ', 'PETER');
+  // values.containcheck('peter');
 }

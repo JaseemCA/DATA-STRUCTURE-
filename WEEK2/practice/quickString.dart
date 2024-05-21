@@ -44,7 +44,7 @@ class quickString {
 
 void main() {
   quickString value = quickString();
-  List<dynamic> arr = ["jithu","danish", "minnu", "jubi", "miju", "ponnu"];
+  List<dynamic> arr = ["zithu","anish", "minnu", "jubi", "miju", "aonnu"];
   value.quicksort(arr);
   print(arr);
 }

@@ -17,7 +17,7 @@ class Quicksort {
     int right = end;
 
     while (left <= right) {
-      if (arr[pivot] > arr[left] && arr[right] > arr[pivot]) {
+      if (arr[pivot] < arr[left] && arr[right] < arr[pivot]) {
         int temp = arr[left];
         arr[left] = arr[right];
         arr[right] = temp;

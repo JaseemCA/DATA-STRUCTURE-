@@ -11,7 +11,7 @@ class Quicksort {
     if (start >= end) {
       return;
     }
-    int pivot = start;
+    int pivot = arr[(start + end) ~/ 2];
     int left = start + 1;
     int right = end;
     while (left <= right) {
@@ -42,7 +42,7 @@ class Quicksort {
 void main() {
   Quicksort value = Quicksort();
 
-  List<dynamic> arr = [123, 234, 25, 345, 345];
+  List<dynamic> arr = [123, 234, 25 ,2 ,0,0,1,0,345,1, 345];
 
   value.quicksort(arr);
   print(arr);

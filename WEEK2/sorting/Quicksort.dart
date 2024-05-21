@@ -1,5 +1,5 @@
 class sorting {
-  quicksort(List<int> arr) {
+ List<int> quicksort(List<int> arr) {
     int start = 0;
     int end = arr.length - 1;
     Quicksortfunc(arr, start, end);
@@ -30,8 +30,8 @@ class sorting {
       }
     }
     swap(arr, right, pivot);
-    Quicksortfunc(arr, start, right - 1);
-    Quicksortfunc(arr, right + 1, end);
+    Quicksortfunc(arr, start, right);
+    Quicksortfunc(arr, right, end);
   }
 
   swap(List<int> arr, int i, int j) {

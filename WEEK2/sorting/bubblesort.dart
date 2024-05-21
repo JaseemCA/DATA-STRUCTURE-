@@ -21,7 +21,7 @@ class Bubble {
 
 void main() {
   Bubble values = Bubble();
-  List<int> arr = [2, 3, 3, 4, 5, 6, 8, 9, 77, 322, 344, 656];
+  List<int> arr = [2, 3, 3, 4, 5, 6,0, 8, 9, 77, 322, 344, 656];
   values.bubblesort(arr);
   print(arr);
 }

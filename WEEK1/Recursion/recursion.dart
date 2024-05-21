@@ -1,13 +1,11 @@
-
-
 class Recursion {
   reverseString(String data) {
     if (data.length <= 1) {
       return data;
     }
-    String a = reverseString(data.substring(1)) + data[0];
-    print(a);
-    return a;
+    return data[data.length-1]+ reverseString(data.substring(0,data.length-1));
+    
+    
   }
 
   factorial(int n) {
@@ -18,7 +16,7 @@ class Recursion {
     }
   }
 
- multiple(int num, int times) {
+  multiple(int num, int times) {
     if (times == 1) {
       return num;
     } else {
@@ -27,10 +25,22 @@ class Recursion {
   }
 }
 
+String reverseString(String str) {
+  if (str.length <= 1) {
+    return str;
+  }
+
+  return str[str.length - 1] + reverseString(str.substring(0, str.length - 1));
+}
+
 void main() {
   Recursion values = Recursion();
 
-  // var resu = values.factorial(0);
-  // print(resu);
-  values.multiple(8,8);
+  var resu = values.multiple(5, 10);
+  print(resu);
+
+  // String original = "hello";
+  // String reversed = reverseString(original);
+  // print("Original string: $original");
+  // print("Reversed string: $reversed");
 }
