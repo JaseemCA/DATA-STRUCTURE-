@@ -61,10 +61,14 @@ class Binery {
         parent = current;
         current = current.right;
       } else {
+    // Node found
+
         if (current.left != null && current.right != null) {
+          // Case 3: Node with two children
           current.data = getminamvalue(current.right);
           removehelper(current.data!, current.right, current);
         } else {
+           // Case 1 and 2: Node with one or no child
           if (parent == null) {
             if (current.right == null) {
               root = current.left;
